@@ -1,129 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    Opika Extra Mile Method Demo
-    Praana Center for Asthma, Allergy & Immunology
-    Hand-off Notes:
-      - Change practice name, phone, address, hours by updating respective <span> or <section> content.
-      - Wire callback form in #callback-form to Formspree/serverless by changing form action/comment.
-      - For PDFs, swap href in .form-link anchors.
-      - Facebook/analytics URLs in footer.
-      - To split into multi-page: duplicate section ids into separate files, update nav anchors.
-  -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta http-equiv="Cache-Control" content="max-age=86400">
   <title>Praana Center for Asthma, Allergy & Immunology | Willowbrook, IL</title>
   <meta name="description" content="Compassionate, evidence-based allergy and asthma care for adults and children in Willowbrook, IL. Relief, control plans, and prevention for allergies, asthma, eczema, and more.">
   <meta name="robots" content="index,follow">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Praana Center for Asthma, Allergy & Immunology"/>
-  <meta property="og:description" content="Compassionate, evidence-based allergy and asthma care for adults and children in Willowbrook, IL."/>
-  <meta property="og:type" content="medical.clinic"/>
-  <meta property="og:url" content="https://drsamkoppula.com/"/>
-  <meta property="og:image" content="https://drsamkoppula.com/icon.png"/>
-  <meta property="og:locale" content="en_US"/>
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Praana Center for Asthma, Allergy & Immunology"/>
-  <meta name="twitter:description" content="Compassionate, evidence-based allergy and asthma care for adults and children in Willowbrook, IL."/>
-  <!-- Physician JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "name": "Praana Center for Asthma, Allergy & Immunology",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "6857 Kingery Highway",
-      "addressLocality": "Willowbrook",
-      "addressRegion": "IL",
-      "postalCode": "60527"
-    },
-    "telephone": "(630) 323-8800",
-    "geo": {"@type":"GeoCoordinates","latitude":41.7662,"longitude":-87.9396},
-    "openingHours": [
-      "Mo 13:30-18:00",
-      "Tu Closed",
-      "We 13:30-18:00",
-      "Th 13:30-18:00",
-      "Fr Closed",
-      "Sa 08:00-12:00",
-      "Su Closed"
-    ],
-    "sameAs": ["https://facebook.com/praanaallergy"]
-  }
-  </script>
+  <meta name="theme-color" content="#1a94a6">
   <style>
+    :root {
+      --blue: #197fa6;
+      --deep-blue: #156682;
+      --jade: #45b679;
+      --lemon: #ffe473;
+      --pale-lemon: #fff8e1;
+      --orange: #faad4d;
+      --aqua: #63e9eb;
+      --tealbg: #e2f7f8;
+      --violet: #845ef7;
+      --fuchsia: #d065a3;
+      --soft-white: #fafcff;
+      --pale-grey: #f7fafc;
+      --alt-grey: #e6f0f6;
+      --alt-text: #3a436d;
+    }
     html {
       scroll-behavior: smooth;
-      touch-action: manipulation;
-      background: #f6fafc;
+      background: var(--soft-white);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      color: #223;
+      color: var(--alt-text);
     }
     body {
       margin: 0;
-      min-width: 350px;
+      min-width: 340px;
       font-size: 1rem;
-      line-height: 1.55;
-      background: #f6fafc;
+      line-height: 1.6;
+      background: linear-gradient(100deg, var(--pale-grey) 65%, var(--aqua) 100%);
     }
-    /* Layout */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 16px;
     }
-    .section { 
-      padding: 56px 0 40px 0;
+    .section {
+      padding: 54px 0 38px 0;
       position: relative;
     }
     header, footer {
-      background: #e4f1f7;
+      background: linear-gradient(90deg, var(--alt-grey) 0, var(--tealbg) 100%);
     }
-    /* Sticky nav */
     nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,32,64,0.03);
-      border-bottom: 1.5px solid #e1eaf0;
+      background: var(--soft-white);
+      box-shadow: 0 2px 14px rgba(31,61,99,0.035);
+      border-bottom: 1.5px solid var(--alt-grey);
     }
     .nav-inner {
       display: flex; align-items: center; gap: 24px;
       max-width: 1200px; margin: 0 auto; padding: 0 16px;
-      height: 58px;
+      height: 60px;
     }
     .skip-link {
       position:absolute;left:-1000px;top:auto; width:1px;height:1px;overflow:hidden;
-      background: #fff; color: #174e5c;
+      background: #fff; color: var(--deep-blue);
     }
     .skip-link:focus { left:16px; top: 8px; width:auto; height:auto; padding:8px 16px; z-index:1002;
-        outline:2px solid #174e5c;
+        outline:2px solid var(--violet);
     }
     .nav-brand {
-      font-weight: 700; font-size: 1.19rem; color: #174e5c; letter-spacing: -0.5px;
-      display:flex;align-items:center;gap:9px
+      font-weight: 700; font-size: 1.21rem; color: var(--deep-blue); letter-spacing: -0.5px;
+      display:flex;align-items:center;gap:10px
     }
     .nav-links {
-      display: flex; flex-wrap: wrap; gap: 14px;
-      margin-left: auto;
+      display: flex; flex-wrap: wrap; gap: 14px; margin-left: auto;
     }
     .nav-link {
-      text-decoration: none; color: #223; font-size: 0.96rem;
-      padding:7px 8px;border-radius:5px;transition:background .13s;
+      text-decoration: none; color: var(--alt-text); font-size: 1rem;
+      padding:7px 10px;border-radius:7px;transition:background .13s;
+      background: none;
     }
-    .nav-link:focus, .nav-link:hover { background: #dcecf5; color: #174e5c; }
-    /* Hero */
+    .nav-link:focus, .nav-link:hover { background: var(--aqua); color: var(--deep-blue);}
     .hero {
-      background: linear-gradient(120deg,#e4f1f7 75%,#f6fafc 100%);
-      padding-bottom: 40px;
+      background: linear-gradient(120deg, var(--tealbg) 65%, var(--pale-lemon) 100%);
+      padding-bottom: 48px;
       position: relative;
       overflow:hidden;
       display:flex;align-items:center;min-height:370px;
+      border-bottom: 3px solid var(--alt-grey);
     }
     .hero-content {
       flex:1;
@@ -131,197 +97,184 @@
       z-index:2;
     }
     .hero-headline {
-      font-size: 2.02rem;
+      font-size: 2rem;
       font-weight: 700;
-      color: #174e5c;
-      letter-spacing: -0.6px;
-      margin-bottom: 13px;
-      line-height: 1.12;
-      max-width: 680px;
-      animation: hero-fadein 1s both;
-    }
-    @keyframes hero-fadein {
-      from { opacity: 0; transform: translateY(20px);}
-      to {   opacity: 1; transform: none;}
+      color: var(--deep-blue);
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      line-height: 1.15;
+      max-width: 660px;
+      background: linear-gradient(90deg, var(--deep-blue) 80%, var(--jade) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .hero-sub {
-      font-size: 1.09rem; color: #223;
-      margin-bottom: 26px;
-      max-width: 500px;
-      opacity: 0.92;
+      font-size: 1.13rem; color: var(--deep-blue);
+      margin-bottom: 25px; max-width: 520px; opacity: 0.96; font-weight:500;
     }
     .hero-actions {
-      display: flex; gap: 15px; margin-bottom: 12px; flex-wrap:wrap;
+      display: flex; gap: 14px; margin-bottom: 13px; flex-wrap:wrap;
     }
     .hero-actions .cta-btn {
-      font-weight: 600; font-size: 1rem; background: #174e5c; color: #fff;
-      padding: 13px 22px; border-radius:8px; border:none;
+      font-weight: 600; font-size: 1.07rem; background: linear-gradient(97deg, var(--blue) 65%, var(--jade) 100%);
+      color: #fff; padding: 15px 23px; border-radius:8px; border:none;
       text-decoration: none; cursor: pointer; display:flex;align-items:center;gap:8px;
-      transition: background .18s;
-      box-shadow: 0 1px 6px rgba(23,78,92,.075);
+      transition: background .19s;
+      box-shadow: 0 1px 6px rgba(31,80,120,0.06);
     }
-    .hero-actions .cta-btn:focus, .hero-actions .cta-btn:hover { background: #206b82; outline:none; }
-    .hero-actions .secondary-btn {
-      background: #e2eef7; color: #206b82; font-weight: 500;
-      border: 1.7px solid #174e5c; box-shadow:none;
+    .hero-actions .cta-btn:focus, .hero-actions .cta-btn:hover { background: var(--jade);}
+    .hero-location {
+      font-size: .99rem; color: var(--jade); margin-top:7px; opacity:0.83;
+      display:flex;align-items:center;gap:6px; font-weight:500;
     }
-    .hero-location, .hero-meta {
-      font-size: 0.97rem; color: #206b82; margin-top:7px; opacity:0.74;
-      display:flex;align-items:center;gap:6px;
+    .hero-pollen {
+      color:var(--orange);font-size:.96rem;background:none;border:none;text-decoration:underline;padding:0;margin-top:7px;cursor:pointer;opacity:.90;font-weight:600;
     }
-    .hero-pollen {color:#22828c;font-size:.96rem;background:none;border:none;text-decoration:underline;padding:0;margin-top:7px;cursor:pointer;opacity:.86;}
     .hero-svg {
       position:absolute;bottom:0;right:0;z-index:0;pointer-events:none;
-      width:32vw;max-width:420px;min-width:180px; height:220px;
-      opacity:0.095;
-      animation: hero-bg-move 4s linear alternate infinite;
+      width:33vw;max-width:390px;min-width:170px; height:150px;
+      opacity:0.13;
+      animation: hero-bg-move 3.6s linear alternate infinite;
       will-change:transform;
     }
-    @media (prefers-reduced-motion:reduce) {
-      .hero-headline, .hero-svg { animation: none !important;}
-    }
-    @keyframes hero-bg-move {
-      0% {transform:translateY(10px) scale(1);}
-      100%{transform:translateY(-15px) scale(1.08);}
-    }
-    /* Conditions grid */
+    @media (prefers-reduced-motion:reduce) { .hero-headline, .hero-svg { animation: none !important;} }
+    @keyframes hero-bg-move { 0% {transform:translateY(10px) scale(1);} 100%{transform:translateY(-8px) scale(1.06);} }
     .grid {
       display:grid;
       grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-      gap:28px;
+      gap:29px;
       margin:22px 0;
     }
     .card {
-      background:#fff;
-      border-radius:11px;
-      box-shadow: 0 2px 9px rgba(10,46,92,0.07);
-      padding:18px 16px;
-      min-height:110px;
+      background: linear-gradient(120deg, var(--pale-lemon) 30%, #eef8fd 130%);
+      border-radius:12px;
+      box-shadow: 0 2.2px 11px rgba(31,61,99,0.08);
+      padding:18px 13px;
+      min-height:108px;
       display:flex;flex-direction:column;justify-content:center;
-      transition:box-shadow .16s,transform .16s;
+      border:1.8px solid var(--aqua);
+      transition:box-shadow .17s,transform .17s;
       position:relative;
+      overflow:hidden;
     }
-    .card:focus-within, .card:hover {box-shadow:0 4px 18px rgba(17,62,122,0.11);transform:translateY(-2px);}
+    .card:focus-within, .card:hover {
+      box-shadow:0 4px 16px rgba(132,94,247,0.14);
+      border-color: var(--violet);
+      background: linear-gradient(100deg, var(--pale-lemon) 55%, var(--aqua) 100%);
+      transform:translateY(-2.5px) scale(1.013);
+    }
     .card-title {
-      font-size: 1.11rem; font-weight: 600; color: #174e5c;
-      margin-bottom: 5px; display:flex;align-items:center;gap:6px;
+      font-size: 1.13rem; font-weight: 700; color: var(--deep-blue); margin-bottom: 6px;
     }
-    .card-desc { font-size: .99rem; color: #222; margin-bottom:8px;}
-    .card-link {
-      font-size: .96rem; color: #206b82; text-decoration: none; font-weight: 500;
-      display:inline-block;padding:2px 3px 2px 0;
-      background:none;
-      transition:color .14s;
-    }
-    .card-link:hover,.card-link:focus {color:#174e5c;}
-    /* Services & bullets */
+    .card-desc { font-size:1.01rem; color: var(--alt-text); margin-bottom:8px;}
+    .card-link { font-size:.97rem; color: var(--violet); text-decoration:none; font-weight:500; display:inline-block;transition:color .19s;}
+    .card-link:hover,.card-link:focus {color:var(--fuchsia);}
     .bullets {
       list-style:none;padding:0;margin:0;
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;
     }
     .bullet {
       display:flex;gap:10px;align-items:flex-start;
-      margin-bottom:11px;
+      margin-bottom:14px;
+      background: linear-gradient(93deg, var(--pale-lemon) 0, #eaf9fa 100%);
+      border-radius:9px;
+      padding:10px 12px 10px 10px;
+      box-shadow: 0 1.4px 8px rgba(230,164,50,0.027);
+      position:relative;
     }
-    .bullet-icon {flex-shrink:0; width:23px; height:23px;}
-    .bullet-text {font-size:1rem;}
-    /* Accordion FAQ */
-    .faq-group {margin-top:19px;}
-    .faq-item {background:#f2f7fb;border-radius:8px;box-shadow:0 1px 5px rgba(17,62,122,0.042);margin-bottom:9px;}
+    .bullet::before {
+      content:"";
+      width:15px; height:15px; border-radius:6px;
+      display:inline-block;
+      margin-right:8px; margin-top:4px; flex-shrink:0;
+      background: linear-gradient(120deg, var(--jade) 60%, var(--aqua) 100%);
+    }
+    .bullet-text {font-size:1.01rem;color:var(--deep-blue);}
+    .faq-group {margin-top:17px;}
+    .faq-item {background:linear-gradient(89deg,var(--pale-lemon) 80%,#e1f0c7 100%);border-radius:8px;box-shadow:0 1.4px 7px rgba(182,179,60,0.055);margin-bottom:10px;}
     .faq-qbtn {
-      background:none; border:none; color:#174e5c; font-size:1.01rem; padding:15px 16px; font-weight:600;
+      background:none; border:none; color:var(--violet); font-size:1.03rem; padding:14px 16px; font-weight:700;
       display:flex;align-items:center;justify-content:space-between;width:100%;cursor:pointer;
     }
+    .faq-qbtn:focus, .faq-qbtn:hover {color:var(--fuchsia);}
     .faq-qbtn[aria-expanded="true"] svg {transform:rotate(90deg);}
-    .faq-a {padding:0 16px 13px 16px;font-size:0.98rem;line-height:1.6;color:#222;}
-    /* Patient Forms */
-    .form-list {
-      list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:13px;
-    }
-    .form-link {
-      background:#e2eef7;color:#174e5c;font-weight:500; border-radius:6px; text-decoration:none;padding:9px 15px;display:inline-block;border:none;transition:background .14s;
-      font-size:.99rem;
-    }
-    .form-link:focus,.form-link:hover{background:#c8e2f0;color:#206b82;text-decoration:underline;}
-    /* Resources */
-    .resource-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:18px;}
-    .resource-link{display:flex;flex-direction:column;margin-bottom:12px;}
-    .resource-link a{font-weight:600;color:#206b82;text-decoration:underline;font-size:1rem;}
-    .resource-desc{font-size:0.97rem;color:#223;opacity:0.86;}
-    /* Office Info */
+    .faq-a {padding:0 16px 12px 16px;font-size:0.99rem;line-height:1.6;color:#3a436d;}
+    .form-list {list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:12px;}
+    .form-link {background: linear-gradient(95deg,#fff8e1 75%,var(--aqua) 100%);
+      color:var(--deep-blue);font-weight:600; border-radius:7px; text-decoration:none;padding:10px 15px;display:inline-block;border:none;transition:background .13s;font-size:1rem;}
+    .form-link:focus,.form-link:hover{background:var(--aqua);color:var(--deep-blue);}
+    .resource-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:15px;}
+    .resource-link{display:flex;flex-direction:column;margin-bottom:11px;}
+    .resource-link a{font-weight:700;color:var(--violet);text-decoration:underline;font-size:1rem;transition:color .18s;}
+    .resource-link a:hover, .resource-link a:focus {color:var(--fuchsia);}
+    .resource-desc{font-size:0.97rem;color:var(--deep-blue);opacity:0.91;}
     .office-info{margin-top:11px;}
-    .office-address{font-size:1.07rem;font-weight:500;color:#174e5c;}
-    .office-hours{font-size:0.98rem;margin:7px 0;}
-    .office-access{font-size:0.97rem;color:#22828c;}
-    .static-map {width:100%;max-width:370px;height:110px;background:#e2eef7;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.97rem;color:#174e5c; margin:11px 0;}
-    /* Contact */
-    .contact-actions{display:flex;flex-direction:column;gap:18px;margin-top:15px;}
+    .office-address{font-size:1.06rem;font-weight:700;color:var(--deep-blue);}
+    .office-hours{font-size:1.01rem;margin:7px 0;}
+    .office-access{font-size:0.98rem;color:var(--jade);}
+    .static-map {width:100%;max-width:370px;height:110px;background:linear-gradient(90deg,#fafcff 50%,var(--jade) 120%);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--deep-blue); margin:11px 0;}
+    .open-map-btn {
+      display:inline-block;
+      padding:8px 14px;
+      font-size:0.98rem;
+      color:#fff;
+      background:linear-gradient(90deg,var(--violet) 65%,var(--jade) 110%);
+      border:none;
+      border-radius:7px;
+      text-decoration:none;
+      margin-left:12px;
+      font-weight:600;
+      transition:background .15s;
+      box-shadow: 0 2px 7px rgba(31,61,99,.08);
+      cursor:pointer;
+    }
+    .open-map-btn:focus, .open-map-btn:hover{background:var(--fuchsia);}
+    .contact-actions{display:flex;flex-direction:column;gap:18px;margin-top:16px;}
     .big-call-btn{
-      background:#174e5c;color:#fff;font-weight:700;font-size:1.11rem;padding:15px 25px;border-radius:8px;border:none;cursor:pointer;box-shadow:0 2px 7px rgba(23,78,92,.09);text-decoration:none;display:flex;align-items:center;gap:9px;transition:background .17s;
-      align-self:start;
+      background:linear-gradient(98deg,var(--jade) 60%,var(--blue) 100%);
+      color:#fff;font-weight:700;font-size:1.13rem;padding:17px 26px;border-radius:10px;border:none;cursor:pointer;box-shadow:0 2px 7px rgba(31,61,99,0.08);text-decoration:none;display:flex;align-items:center;gap:9px;transition:background .17s;align-self:start;
     }
-    .big-call-btn:focus,.big-call-btn:hover{background:#206b82;}
-    .callback-btn {font-size:1rem;background:#e2eef7;color:#206b82;border:1.6px solid #174e5c;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;cursor:pointer;display:flex;align-items:center;gap:8px;}
-    .callback-btn:focus,.callback-btn:hover{background:#dbeefa;color:#174e5c;}
-    /* Modal */
-    .modal-bg{ position: fixed; inset:0; background: rgba(54, 96, 127, .25); z-index:1001; display:flex;align-items:center;justify-content:center;}
-    .modal-box{ background:#fff;border-radius:14px;box-shadow:0 8px 24px rgba(10,46,92,.22);padding:28px 22px 22px 22px;width:100%;max-width:410px; position:relative;}
-    .modal-close{position:absolute;top:18px;right:16px;background:none;border:none;font-size:1.45rem;color:#174e5c;cursor:pointer;}
-    .modal-title{font-size:1.19rem;font-weight:600;color:#206b82;margin-bottom:7px;}
-    /* Modal form */
-    .modal-form label{display:block;font-weight:500;margin:13px 0 4px 0;color:#174e5c;}
-    .modal-form input, .modal-form select{
-      width:100%;padding:9px 11px;margin-bottom:13px;font-size:1.04rem;border-radius:5.5px;border:1.4px solid #d2e3ea;background:#f8fbfd;color:#174e5c;
-      outline:none;transition:border-color .13s;
-    }
-    .modal-form input:focus, .modal-form select:focus{border-color:#206b82;}
-    .modal-form button[type="submit"]{
-      background:#206b82;color:#fff;font-weight:600;font-size:1.05rem;border:none;border-radius:7px;padding:12px 18px;cursor:pointer;width:100%; margin-top:9px;
-      transition:background .16s;
-    }
-    .modal-form button[type="submit"]:focus,.modal-form button[type="submit"]:hover{background:#174e5c;}
-    .modal-note{font-size:0.92rem;color:#893b1c;background:#fff3e2;border-radius:7px;padding:6px 10px;margin-bottom:10px;}
-    .modal-toast{
-      position:absolute;top:5px;left:50%;transform:translate(-50%,0);background:#206b82;color:#fff;
-      padding:7px 14px;border-radius:6px;font-size:1rem;display:none;z-index:10;
-    }
-    /* Footer + NAP */
-    footer{padding:24px 0 9px 0;}
-    .footer-inner{max-width:1200px;margin:0 auto;padding:0 16px;color:#174e5c;font-size:0.97rem;}
-    .footer-nav{display:flex;gap:14px;}
-    .footer-nap{margin-top:11px;}
-    .footer-seo{
-      font-size:0.93rem; color: #22828c;
-      margin-top:8px;
-    }
-    .copyright{font-size:0.93rem;color:#223;margin-top:5px;}
-    .footer-disclaimer{font-size:0.92rem;color:#8a1c32;margin-top:13px;}
-    /* SVG icons */
+    .big-call-btn:focus,.big-call-btn:hover{background:var(--jade);}
+    footer{padding:30px 0 12px 0;}
+    .footer-inner{max-width:1200px;margin:0 auto;padding:0 16px;color:var(--deep-blue);font-size:0.99rem;}
+    .footer-nav{display:flex;gap:15px;}
+    .footer-nav a {transition:color .16s;}
+    .footer-nav a:focus, .footer-nav a:hover {color:var(--violet);}
+    .footer-nap{margin-top:13px;}
+    .footer-seo{font-size:0.97rem; color: var(--jade); margin-top:8px;}
+    .copyright{font-size:0.98rem;color:var(--alt-text);margin-top:8px;}
+    .footer-disclaimer{font-size:0.97rem;color:var(--fuchsia);margin-top:12px;}
     .svg-icon{vertical-align:-5px;}
-    /* Back-to-top */
-    .top-btn{position:fixed;bottom:32px;right:32px;background:#dbeefa;color:#174e5c;border:2.2px solid #174e5c;padding:11px 14px;border-radius:40px;font-size:1.3rem;cursor:pointer;z-index:999;box-shadow:0 2px 9px rgba(37,117,135,0.07);opacity:.80;display:none;}
-    .top-btn:focus{background:#22828c;color:#fff;}
-    /* Responsive */
+    .top-btn{position:fixed;bottom:32px;right:32px;background:var(--aqua);color:var(--blue);border:2.2px solid var(--violet);padding:13px 17px;border-radius:40px;font-size:1.44rem;cursor:pointer;z-index:999;box-shadow:0 2px 9px rgba(37,117,135,0.09);opacity:.92;display:none;transition:background .14s;}
+    .top-btn:focus{background:var(--fuchsia);color:#fff;}
     @media only screen and (max-width:900px){
       .bullets,.grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+      .hero-headline {font-size: 1.38rem;}
+      nav .nav-inner {height:51px;}
+      .container{padding:0 7px;}
+      footer .footer-inner{padding:0 7px;}
     }
     @media only screen and (max-width:600px){
-      .nav-brand{font-size:1.01rem;}
-      .container{padding:0 7px;}
-      .section{padding:32px 0 23px 0;}
-      .hero-headline{font-size:1.28rem;}
-      .bullets{grid-template-columns:1fr;}
-      .card{padding:13px 8px;}
-      .modal-box{max-width:96vw;}
-      .static-map{height:65px;}
+      .nav-brand{font-size:0.97rem;}
+      .container{padding:0 3px;}
+      .section{padding:32px 0 18px 0;}
+      .hero-headline{font-size:1.07rem;}
+      .bullets, .grid{grid-template-columns:1fr;}
+      .card{padding:12px 6px;}
+      .static-map{height:54px;}
+      .big-call-btn, .hero-actions .cta-btn{padding:12px 6px;font-size:.97rem;}
+      .office-address, .office-hours, .office-access{font-size:0.97rem;}
+      .footer-inner{font-size:0.97rem;}
     }
-    /* Accessible focus */
-    :focus{outline:2.4px solid #174e5c;}
-    /* Hide visually for aria/SEO */
+    @media screen and (max-width:390px){
+      nav .nav-inner{height:47px;}
+      .hero-headline{font-size:0.93rem;}
+      .footer-inner, .office-address, .office-hours{font-size:0.96rem;}
+    }
+    :focus{outline:2.3px solid var(--violet);}
     .visually-hidden{visibility:hidden;position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);}
-    /* Utility */
-    .mt-1 { margin-top: 7px; }
-    .mb-1 { margin-bottom: 7px; }
+    .mt-1 { margin-top: 6px; }
+    .mb-1 { margin-bottom: 8px;}
     .mb-2 { margin-bottom: 13px;}
   </style>
 </head>
@@ -330,13 +283,12 @@
   <header>
     <nav aria-label="Main Navigation">
       <div class="nav-inner">
-        <!-- Brand icon: Stethoscope -->
         <span class="nav-brand">
-          <svg class="svg-icon" aria-hidden="true" viewBox="0 0 30 30" width="21" height="21" fill="none">
-            <circle cx="15" cy="15" r="13" stroke="#206b82" stroke-width="1.6"/>
-            <path d="M9 12v4c0 3.2 2.6 5.8 5.8 5.8s5.8-2.6 5.8-5.8v-4" stroke="#206b82" stroke-width="2.3" fill="none"/>
-            <circle cx="9" cy="12" r="2.6" stroke="#174e5c" stroke-width="2" fill="#fff"/>
-            <circle cx="21" cy="12" r="2.6" stroke="#174e5c" stroke-width="2" fill="#fff"/>
+          <svg class="svg-icon" aria-hidden="true" viewBox="0 0 30 30" width="22" height="22" fill="none">
+            <circle cx="15" cy="15" r="13" stroke="#197fa6" stroke-width="2"/>
+            <path d="M9 12v4c0 3.2 2.6 5.8 5.8 5.8s5.8-2.6 5.8-5.8v-4" stroke="#45b679" stroke-width="2.1" fill="none"/>
+            <circle cx="9" cy="12" r="2.6" stroke="#845ef7" stroke-width="2" fill="#fff8e1"/>
+            <circle cx="21" cy="12" r="2.6" stroke="#faad4d" stroke-width="2" fill="#e2f7f8"/>
           </svg>
           Praana Center for Asthma, Allergy & Immunology
         </span>
@@ -363,23 +315,16 @@
         <div class="hero-actions" role="group" aria-label="Call to Action">
           <a class="cta-btn" href="tel:6303238800">
             <svg class="svg-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 22 22" fill="none">
-              <rect x="6" y="2" width="10" height="18" rx="5" stroke="#fff" stroke-width="2" fill="#174e5c"/>
+              <rect x="6" y="2" width="10" height="18" rx="5" stroke="#fff" stroke-width="2" fill="#197fa6"/>
               <rect x="8" y="4" width="6" height="14" rx="3" stroke="#fff" stroke-width="1.3"/>
               <circle cx="11" cy="17" r="1.3" fill="#fff"/>
             </svg>
             Call (630) 323-8800
           </a>
-          <button class="cta-btn secondary-btn" type="button" id="openCallbackBtn">
-            <svg class="svg-icon" aria-hidden="true" width="22" height="22" viewBox="0 0 22 22" fill="none">
-              <rect x="2" y="4" width="18" height="14" rx="3" stroke="#206b82" stroke-width="2" fill="#e2eef7"/>
-              <path d="M7 8l4 3.5 4-3.5" stroke="#206b82" stroke-width="1.6"/>
-            </svg>
-            Request a Callback
-          </button>
         </div>
         <div class="hero-location">
           <svg class="svg-icon" aria-hidden="true" width="17" height="17" viewBox="0 0 18 18" fill="none">
-            <path d="M9 2a5 5 0 0 1 5 5c0 2.49-4.3 8.02-4.7 8.54a1.07 1.07 0 0 1-1.6 0C4.3 15.02 0 9.49 0 7a5 5 0 0 1 5-5z" fill="#206b82"/>
+            <path d="M9 2a5 5 0 0 1 5 5c0 2.49-4.3 8.02-4.7 8.54a1.07 1.07 0 0 1-1.6 0C4.3 15.02 0 9.49 0 7a5 5 0 0 1 5-5z" fill="#45b679"/>
             <circle cx="9" cy="7" r="2" fill="#fff"/>
           </svg>
           Willowbrook, IL
@@ -389,234 +334,75 @@
         </button>
       </div>
       <svg class="hero-svg" aria-hidden="true" viewBox="0 0 500 220">
-        <ellipse cx="250" cy="117" rx="180" ry="80" fill="#174e5c"/>
+        <ellipse cx="260" cy="117" rx="148" ry="55" fill="#63e9eb"/>
+        <ellipse cx="260" cy="160" rx="112" ry="33" fill="#faad4d" opacity="0.15"/>
+        <ellipse cx="270" cy="185" rx="70" ry="13" fill="#ffe473" opacity="0.14"/>
+        <ellipse cx="220" cy="150" rx="36" ry="9" fill="#d065a3" opacity="0.10"/>
       </svg>
     </section>
-    <!-- Conditions Section -->
+    <!-- Conditions -->
     <section id="conditions-section" class="section" aria-label="Conditions Treated">
       <div class="container">
         <h2>Conditions We Treat</h2>
         <div class="grid" role="list">
-          <!-- Card: Allergic rhinitis -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><path d="M10 12v3" stroke="#174e5c" stroke-width="2"/></svg>
-              Allergic Rhinitis
-            </div>
-            <div class="card-desc">Sneezing and nasal congestion caused by triggers like pollen, dust, pets, or mold.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Asthma -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="7" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><path d="M7 10a3 3 0 0 1 6 0" stroke="#174e5c" stroke-width="2"/></svg>
-              Asthma
-            </div>
-            <div class="card-desc">Episodes of wheezing, cough, or shortness of breath from airway inflammation.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Eczema -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="8" ry="6" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><path d="M10 13a4 3 0 0 1 0-6" stroke="#174e5c" stroke-width="2"/></svg>
-              Eczema/Dermatitis
-            </div>
-            <div class="card-desc">Dry, itchy, inflamed skin that can affect children and adults.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Hives -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><rect x="6" y="6" width="8" height="8" rx="4" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><circle cx="10" cy="10" r="2.6" stroke="#174e5c" stroke-width="2" fill="#fff"/></svg>
-              Hives/Urticaria
-            </div>
-            <div class="card-desc">Raised, red, itchy welts on the skin from allergies, infections, or medications.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Food allergies -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><ellipse cx="10" cy="14" rx="6" ry="3" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><circle cx="10" cy="7" r="3.2" stroke="#174e5c" stroke-width="2" fill="#fff"/></svg>
-              Food Allergies
-            </div>
-            <div class="card-desc">Reactions to milk, eggs, peanuts, tree nuts, wheat, seafood, or other foods.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Drug allergies -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><rect x="4" y="4" width="12" height="12" rx="6" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><rect x="8" y="8" width="4" height="4" rx="2" stroke="#174e5c" stroke-width="2"/></svg>
-              Drug Allergies
-            </div>
-            <div class="card-desc">Unexpected reactions or skin rashes after medications.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Insect sting -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="7" ry="4" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><ellipse cx="12" cy="14" rx="2" ry="1" fill="#174e5c"/></svg>
-              Insect Stings
-            </div>
-            <div class="card-desc">Potentially severe reactions to bee, wasp, or insect bites.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Pet -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><ellipse cx="10" cy="13" rx="5" ry="3" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><circle cx="10" cy="8" r="2.6" stroke="#174e5c" stroke-width="2" fill="#fff"/></svg>
-              Pet Allergies
-            </div>
-            <div class="card-desc">Symptoms from exposure to cats, dogs, or other animals.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Mold -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><ellipse cx="10" cy="10" rx="6" ry="6" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><ellipse cx="10" cy="10" rx="3" ry="3" fill="#206b82"/></svg>
-              Mold Allergy
-            </div>
-            <div class="card-desc">Nasal or skin symptoms from indoor or outdoor mold spores.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Dust -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><rect x="4" y="4" width="12" height="12" rx="6" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><ellipse cx="10" cy="10" rx="2" ry="2" fill="#174e5c"/></svg>
-              Dust Allergy
-            </div>
-            <div class="card-desc">Nasal, sinus, or eye irritation from dust mites or household dust.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Latex -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><ellipse cx="10" cy="12" rx="4" ry="2" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><rect x="8" y="5" width="4" height="4" rx="2" fill="#174e5c"/></svg>
-              Latex Allergy
-            </div>
-            <div class="card-desc">Skin reactions to gloves, balloons, or medical products containing latex.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
-          <!-- Card: Sinusitis -->
-          <div class="card" tabindex="0">
-            <div class="card-title">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><rect x="4" y="4" width="12" height="12" rx="6" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><path d="M10 11a2 2 0 1 1 0-4" stroke="#174e5c" stroke-width="2"/></svg>
-              Sinusitis
-            </div>
-            <div class="card-desc">Sinus discomfort from infection or allergies causing headaches and congestion.</div>
-            <a class="card-link" href="#services-section">How we help &rarr;</a>
-          </div>
+          <div class="card" tabindex="0"><div class="card-title"> Allergic Rhinitis </div><div class="card-desc">Sneezing and nasal congestion caused by triggers like pollen, dust, pets, or mold.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Asthma </div><div class="card-desc">Episodes of wheezing, cough, or shortness of breath from airway inflammation.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Eczema/Dermatitis </div><div class="card-desc">Dry, itchy, inflamed skin that can affect children and adults.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Hives/Urticaria </div><div class="card-desc">Raised, red, itchy welts on the skin from allergies, infections, or medications.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Food Allergies </div><div class="card-desc">Reactions to milk, eggs, peanuts, tree nuts, wheat, seafood, or other foods.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Drug Allergies </div><div class="card-desc">Unexpected reactions or skin rashes after medications.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Insect Stings </div><div class="card-desc">Potentially severe reactions to bee, wasp, or insect bites.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Pet Allergies </div><div class="card-desc">Symptoms from exposure to cats, dogs, or other animals.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Mold Allergy </div><div class="card-desc">Nasal or skin symptoms from indoor or outdoor mold spores.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Dust Allergy </div><div class="card-desc">Nasal, sinus, or eye irritation from dust mites or household dust.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Latex Allergy </div><div class="card-desc">Skin reactions to gloves, balloons, or medical products containing latex.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
+          <div class="card" tabindex="0"><div class="card-title"> Sinusitis </div><div class="card-desc">Sinus discomfort from infection or allergies causing headaches and congestion.</div><a class="card-link" href="#services-section">How we help &rarr;</a></div>
         </div>
       </div>
     </section>
-    <!-- Services Section -->
+    <!-- Services -->
     <section id="services-section" class="section" aria-label="Services">
       <div class="container">
         <h2>Our Services</h2>
         <ul class="bullets" role="list">
-          <li class="bullet">
-            <span class="bullet-icon">
-              <svg class="svg-icon" width="21" height="21" aria-hidden="true" viewBox="0 0 21 21"><circle cx="10.5" cy="10.5" r="9" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><rect x="6" y="7" width="9" height="4" rx="2" fill="#174e5c"/></svg>
-            </span>
-            <span class="bullet-text">Diagnostic evaluation with skin or blood (serologic) testing to identify triggers.</span>
-          </li>
-          <li class="bullet">
-            <span class="bullet-icon">
-              <svg class="svg-icon" aria-hidden="true" width="21" height="21" viewBox="0 0 21 21"><rect x="3" y="5" width="15" height="11" rx="5.5" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><path d="M6 10.5h9" stroke="#174e5c" stroke-width="2"/></svg>
-            </span>
-            <span class="bullet-text">Personalized treatment plans tailored to your symptoms and goals.</span>
-          </li>
-          <li class="bullet">
-            <span class="bullet-icon">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><path d="M5 10a5 5 0 1 1 10 0A5 5 0 0 1 5 10z" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><rect x="9" y="9" width="2" height="6" rx="1" fill="#174e5c"/></svg>
-            </span>
-            <span class="bullet-text">Education about medications (antihistamines, inhalers, steroids) and device use.</span>
-          </li>
-          <li class="bullet">
-            <span class="bullet-icon">
-              <svg class="svg-icon" width="22" height="22" aria-hidden="true" viewBox="0 0 22 22"><rect x="5" y="4" width="12" height="10" rx="5" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><rect x="9" y="14" width="4" height="2.5" rx="1.2" fill="#174e5c"/></svg>
-            </span>
-            <span class="bullet-text">Immunotherapy (allergy shots): a proven way to reduce symptoms for certain allergies. Available for people who qualify.</span>
-          </li>
-          <li class="bullet">
-            <span class="bullet-icon">
-              <svg class="svg-icon" width="22" height="22" aria-hidden="true" viewBox="0 0 22 22"><rect x="4" y="8" width="14" height="7" rx="4" fill="#e4f1f7" stroke="#206b82" stroke-width="2"/><rect x="7" y="5" width="8" height="3" rx="1.7" fill="#174e5c"/></svg>
-            </span>
-            <span class="bullet-text">Asthma action plans, trigger management, and breathing education.</span>
-          </li>
-          <li class="bullet">
-            <span class="bullet-icon">
-              <svg class="svg-icon" width="18" height="18" aria-hidden="true" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" stroke="#206b82" stroke-width="2" fill="#e4f1f7"/><ellipse cx="9" cy="9" rx="5" ry="3" fill="#174e5c"/></svg>
-            </span>
-            <span class="bullet-text">Comprehensive pediatric and adult allergy & asthma care.</span>
-          </li>
-          <li class="bullet">
-            <span class="bullet-icon">
-              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20"><rect x="5" y="7" width="10" height="6" rx="3" fill="#e4f1f7"/><rect x="9" y="13" width="2" height="3" rx="1" fill="#174e5c"/></svg>
-            </span>
-            <span class="bullet-text">Concierge-light subscription service (coming soon).</span>
-          </li>
+          <li class="bullet"><span class="bullet-text">Diagnostic evaluation with skin or blood (serologic) testing to identify triggers.</span></li>
+          <li class="bullet"><span class="bullet-text">Personalized treatment plans tailored to your symptoms and goals.</span></li>
+          <li class="bullet"><span class="bullet-text">Education about medications (antihistamines, inhalers, steroids) and device use.</span></li>
+          <li class="bullet"><span class="bullet-text">Immunotherapy (allergy shots): a proven way to reduce symptoms for certain allergies. Available for people who qualify.</span></li>
+          <li class="bullet"><span class="bullet-text">Asthma action plans, trigger management, and breathing education.</span></li>
+          <li class="bullet"><span class="bullet-text">Comprehensive pediatric and adult allergy & asthma care.</span></li>
+          <li class="bullet"><span class="bullet-text">Concierge-light subscription service (coming soon).</span></li>
         </ul>
-        <!-- FAQ Accordion -->
         <div class="faq-group" id="faq-group" aria-label="Common Questions" aria-live="polite">
           <h3>Frequently Asked Questions</h3>
           <div class="faq-item">
-            <button class="faq-qbtn" aria-expanded="false">
-              What ages do you treat?
-              <span aria-hidden="true">&rsaquo;</span>
-            </button>
-            <div class="faq-a" hidden>
-              We welcome both children and adults. Our specialty is allergy & immunology for all ages.
-            </div>
+            <button class="faq-qbtn" aria-expanded="false">What ages do you treat? <span aria-hidden="true">&rsaquo;</span></button>
+            <div class="faq-a" hidden>We welcome both children and adults. Our specialty is allergy & immunology for all ages.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-qbtn" aria-expanded="false">
-              Do I need a referral?
-              <span aria-hidden="true">&rsaquo;</span>
-            </button>
-            <div class="faq-a" hidden>
-              Most patients do not need a referral, but some insurance plans require one. Call our office to verify.
-            </div>
+            <button class="faq-qbtn" aria-expanded="false">Do I need a referral? <span aria-hidden="true">&rsaquo;</span></button>
+            <div class="faq-a" hidden>Most patients do not need a referral, but some insurance plans require one. Call our office to verify.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-qbtn" aria-expanded="false">
-              Are allergy shots (immunotherapy) right for me?
-              <span aria-hidden="true">&rsaquo;</span>
-            </button>
-            <div class="faq-a" hidden>
-              Allergy shots can help those with moderate to severe allergies that don't improve with medications. Eligibility is determined after testing.
-            </div>
+            <button class="faq-qbtn" aria-expanded="false">Are allergy shots (immunotherapy) right for me? <span aria-hidden="true">&rsaquo;</span></button>
+            <div class="faq-a" hidden>Allergy shots can help those with moderate to severe allergies that don't improve with medications. Eligibility is determined after testing.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-qbtn" aria-expanded="false">
-              What should I bring for my first visit?
-              <span aria-hidden="true">&rsaquo;</span>
-            </button>
-            <div class="faq-a" hidden>
-              Please bring your insurance card, photo ID, any recent lab reports, and completed patient forms if possible.
-            </div>
+            <button class="faq-qbtn" aria-expanded="false">What should I bring for my first visit? <span aria-hidden="true">&rsaquo;</span></button>
+            <div class="faq-a" hidden>Please bring your insurance card, photo ID, any recent lab reports, and completed patient forms if possible.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-qbtn" aria-expanded="false">
-              Can I contact with medicine questions?
-              <span aria-hidden="true">&rsaquo;</span>
-            </button>
-            <div class="faq-a" hidden>
-              For medical questions, please call our office at (630) 323-8800. Email and web forms are not for medical advice.
-            </div>
+            <button class="faq-qbtn" aria-expanded="false">Can I contact with medicine questions? <span aria-hidden="true">&rsaquo;</span></button>
+            <div class="faq-a" hidden>For medical questions, please call our office at (630) 323-8800. Email and web forms are not for medical advice.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-qbtn" aria-expanded="false">
-              Do you offer care for eczema and hives?
-              <span aria-hidden="true">&rsaquo;</span>
-            </button>
-            <div class="faq-a" hidden>
-              Yes! We help with evaluation, relief plans, and long-term management for eczema and hives.
-            </div>
+            <button class="faq-qbtn" aria-expanded="false">Do you offer care for eczema and hives? <span aria-hidden="true">&rsaquo;</span></button>
+            <div class="faq-a" hidden>Yes! We help with evaluation, relief plans, and long-term management for eczema and hives.</div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Patient Forms Section -->
+    <!-- Patient Forms -->
     <section id="forms-section" class="section" aria-label="Patient Forms">
       <div class="container">
         <h2>Patient Forms</h2>
@@ -629,7 +415,7 @@
         <span class="modal-note mt-1">Do not send private health information online. Forms are for office check-in only.</span>
       </div>
     </section>
-    <!-- Resources Section -->
+    <!-- Resources -->
     <section id="resources-section" class="section" aria-label="Trusted Resources">
       <div class="container">
         <h2>Trusted Resources</h2>
@@ -661,18 +447,27 @@
         </ul>
       </div>
     </section>
-    <!-- Office Section -->
+    <!-- Office -->
     <section id="office-section" class="section" aria-label="Office Information">
       <div class="container">
         <h2>Office</h2>
         <div class="office-info">
           <div class="office-address">
-            <svg class="svg-icon" width="18" height="18" aria-hidden="true" viewBox="0 0 18 18"><path d="M9 2a5 5 0 0 1 5 5c0 2.49-4.3 8.02-4.7 8.54a1.07 1.07 0 0 1-1.6 0C4.3 15.02 0 9.49 0 7a5 5 0 0 1 5-5z" fill="#206b82"/><circle cx="9" cy="7" r="2" fill="#fff"/></svg>
+            <svg class="svg-icon" width="18" height="18" aria-hidden="true" viewBox="0 0 18 18" fill="none">
+              <path d="M9 2a5 5 0 0 1 5 5c0 2.49-4.3 8.02-4.7 8.54a1.07 1.07 0 0 1-1.6 0C4.3 15.02 0 9.49 0 7a5 5 0 0 1 5-5z" fill="#45b679"/>
+              <circle cx="9" cy="7" r="2" fill="#fff"/>
+            </svg>
             6857 Kingery Highway, Willowbrook, IL 60527
-            <a href="https://maps.google.com/?q=6857+Kingery+Highway,+Willowbrook,+IL+60527" target="_blank" rel="noopener" style="color:#206b82;">Open in Maps</a>
+            <button type="button" class="open-map-btn" id="openMapBtn" aria-label="Open address in Google Maps">
+              <svg class="svg-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 20 20">
+                <path d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0z" fill="#197fa6" />
+                <circle cx="10" cy="10" r="3" fill="#fff8e1"/>
+              </svg>
+              Open in Maps
+            </button>
           </div>
           <div class="office-hours">
-            <svg class="svg-icon" width="19" height="19" aria-hidden="true" viewBox="0 0 19 19"><circle cx="9.5" cy="9.5" r="8" stroke="#206b82" stroke-width="2" fill="#e2eef7"/><path d="M9.5 5v5h4" stroke="#174e5c" stroke-width="2"/></svg>
+            <svg class="svg-icon" width="19" height="19" aria-hidden="true" viewBox="0 0 19 19"><circle cx="9.5" cy="9.5" r="8" stroke="#197fa6" stroke-width="2" fill="#e6f0f6"/><path d="M9.5 5v5h4" stroke="#156682" stroke-width="2"/></svg>
             <strong>Hours:</strong>
             <ul style="list-style:none;padding-left:0;margin:3px 0;">
               <li>Mon 1:30–6:00 pm</li>
@@ -687,38 +482,33 @@
           <div class="office-access mb-2">
             Free parking available; wheelchair accessible entrance.
           </div>
-          <div class="static-map" aria-label="Map placeholder" role="img">
+          <div class="static-map" aria-label="Map preview" role="img">
             <svg width="86" height="50" viewBox="0 0 86 50" fill="none" aria-hidden="true">
-              <rect x="0" y="0" width="86" height="50" rx="12" fill="#e2eef7"/>
-              <ellipse cx="43" cy="25" rx="32" ry="17" fill="#b3dde6"/>
-              <rect x="38" y="17" width="10" height="10" rx="3" fill="#174e5c"/>
-              <rect x="40.5" y="19.5" width="5" height="5" rx="2.2" fill="#fff"/>
-              <path d="M43 25v10" stroke="#206b82" stroke-width="2"/>
+              <rect x="0" y="0" width="86" height="50" rx="12" fill="#f7fafc"/>
+              <ellipse cx="43" cy="25" rx="32" ry="17" fill="#ffe473"/>
+              <rect x="38" y="17" width="10" height="10" rx="3" fill="#faad4d"/>
+              <rect x="40.5" y="19.5" width="5" height="5" rx="2.2" fill="#845ef7"/>
+              <path d="M43 25v10" stroke="#45b679" stroke-width="2"/>
             </svg>
             <span style="margin-left:8px;">Map preview</span>
           </div>
         </div>
       </div>
     </section>
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact-section" class="section" aria-label="Contact & HIPAA">
       <div class="container">
         <h2>Contact Our Office</h2>
         <div class="contact-actions" role="group">
           <a class="big-call-btn" href="tel:6303238800">
-            <svg class="svg-icon" width="22" height="22" aria-hidden="true" viewBox="0 0 22 22"><rect x="6" y="2" width="10" height="18" rx="5" stroke="#fff" stroke-width="2" fill="#174e5c"/><rect x="8" y="4" width="6" height="14" rx="3" stroke="#fff" stroke-width="1.3"/><circle cx="11" cy="17" r="1.3" fill="#fff"/></svg>
+            <svg class="svg-icon" width="22" height="22" aria-hidden="true" viewBox="0 0 22 22"><rect x="6" y="2" width="10" height="18" rx="5" stroke="#fff" stroke-width="2" fill="#197fa6"/><rect x="8" y="4" width="6" height="14" rx="3" stroke="#fff" stroke-width="1.3"/><circle cx="11" cy="17" r="1.3" fill="#fff"/></svg>
             Call (630) 323-8800
           </a>
-          <button class="callback-btn" type="button" id="contactCallbackBtn">
-            <svg class="svg-icon" aria-hidden="true" width="22" height="22" viewBox="0 0 22 22"><rect x="2" y="4" width="18" height="14" rx="3" stroke="#206b82" stroke-width="2" fill="#e2eef7"/><path d="M7 8l4 3.5 4-3.5" stroke="#206b82" stroke-width="1.6"/></svg>
-            Request a Callback
-          </button>
           <span class="modal-note mt-1">
-            <b>HIPAA Notice:</b> Do not send private health information through this form. For medical questions, always call our office.
+            <b>HIPAA Notice:</b> Do not send private health information through forms or email. For medical questions, always call our office.
           </span>
         </div>
       </div>
-      <!-- Modal for callback form -->
     </section>
   </main>
   <footer>
@@ -743,13 +533,9 @@
         This website does not provide medical advice. For emergencies, call 911. Do not send medical information via web forms.
       </div>
     </div>
-    <!-- HAND-OFF: Add analytics script below (disabled by default) -->
-    <!-- Plausible: <script defer data-domain="drsamkoppula.com" src="https://plausible.io/js/plausible.js"></script> -->
-    <!-- GA4: <script async src="https://www.googletagmanager.com/gtag/js?id=GA_ID"></script> -->
   </footer>
   <button class="top-btn" id="top-btn" aria-label="Back to top" tabindex="0">&#8593;</button>
   <script>
-    /* Smooth scroll for anchor nav */
     document.querySelectorAll('.nav-link').forEach(function(link){
       link.addEventListener('click',function(e){
         var href = link.getAttribute('href');
@@ -758,7 +544,6 @@
         }
       });
     });
-    /* FAQ accordion toggle */
     document.querySelectorAll('.faq-qbtn').forEach(function(btn){
       btn.addEventListener('click',function(e){
         var expanded=btn.getAttribute('aria-expanded')==="true";
@@ -768,57 +553,7 @@
         if(!expanded){answer.focus&&answer.focus();}
       });
     });
-    /* Callback modal logic + focus trap */
-    var openModalBtn=document.getElementById('openCallbackBtn');
-    var contactModalBtn=document.getElementById('contactCallbackBtn');
-    var closeModalBtn=document.getElementById('closeModalBtn');
-    var modal=document.getElementById('callback-modal');
-    var modalForm=document.getElementById('callback-form');
-    var modalToast=document.getElementById('modal-toast');
-    function trapFocus(elem){
-      var focusEls=elem.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-      if(focusEls.length){
-        var first=focusEls[0],last=focusEls[focusEls.length-1];
-        elem.addEventListener('keydown',function(e){
-          if(e.key==='Tab'){
-            if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
-            else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
-          }
-        });
-      }
-    }
-    function showModal(){
-      modal.hidden=false;
-      setTimeout(()=>{modal.querySelector('input,select').focus();},80);
-      trapFocus(modal);
-    }
-    function hideModal(){
-      modal.hidden=true;
-      modalToast.style.display='none';
-      modalForm.reset();
-    }
-    if(openModalBtn){openModalBtn.addEventListener('click',showModal);}
-    if(contactModalBtn){contactModalBtn.addEventListener('click',showModal);}
-    if(closeModalBtn){closeModalBtn.addEventListener('click',hideModal);}
-    window.addEventListener('keydown',function(e){
-      if(!modal.hidden&&(e.key==='Escape'||e.key==='Esc'))hideModal();
-    });
-    modal.addEventListener('click',function(e){if(e.target===modal)hideModal();});
-    /* Form validation + dummy submit */
-    modalForm.addEventListener('submit',function(e){
-      e.preventDefault();
-      var name=modalForm['name'].value.trim(),phone=modalForm['phone'].value.trim(),time=modalForm['time'].value;
-      if(!name||!phone||!time){modalToast.textContent='Please fill in all fields.';modalToast.style.display='block';return;}
-      /* HAND-OFF: Replace below with actual POST to Formspree/serverless and handle response */
-      setTimeout(function(){
-        modalToast.textContent='Thank you – we will call you soon!';
-        modalToast.style.display='block';
-        modalForm.reset();
-      },900);
-    });
-    /* Dynamic copyright year */
     document.getElementById('copyright-year').textContent=new Date().getFullYear();
-    /* Back to top button */
     var topBtn=document.getElementById('top-btn');
     window.addEventListener('scroll',function(){
       topBtn.style.display=window.scrollY>310?'block':'none';
@@ -830,12 +565,14 @@
     topBtn.addEventListener('keydown',function(e){
       if(e.key==='Enter'){window.scrollTo({top:0,behavior:"smooth"});}
     });
-    /* Accessibility enhancements for reduced motion */
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       document.querySelectorAll('*').forEach(function(el){
         el.style.transition='none';
       });
     }
+    document.getElementById('openMapBtn').addEventListener('click',function(){
+      window.open('https://maps.google.com/?q=6857+Kingery+Highway,+Willowbrook,+IL+60527','_blank');
+    });
   </script>
 </body>
 </html>
